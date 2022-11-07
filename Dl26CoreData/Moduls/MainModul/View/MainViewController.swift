@@ -29,8 +29,21 @@ class MainScreenViewConroller: UIViewController {
         button.setTitle("Press", for: .normal)
         button.layer.cornerRadius = 8
         button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(addValue), for: .touchUpInside)
         return button
     }()
+    
+    @objc func addValue() {
+        if data.array.isEmpty {
+            data.addPersons()
+            table.reloadData()
+        } else if searchTextField.text == "" {
+            return
+        } else {
+            addArray(string: searchTextField.text ?? "")
+            table.reloadData()
+        }
+    }
     
     private lazy var table: UITableView = {
         let table = UITableView(frame: .zero, style: .insetGrouped)
@@ -45,7 +58,6 @@ class MainScreenViewConroller: UIViewController {
         super.viewDidLoad()
         title = "Users"
         view.backgroundColor = .white
-        data.addPersons()
         setupLayout()
         setupView()
     }
@@ -95,12 +107,15 @@ extension MainScreenViewConroller: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let infoViewController = InfoScreenViewController()
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-        navigationController?.pushViewController(infoViewController, animated: true)
+        let infoScreenViewController = InfoScreenViewController()
+        infoScreenViewController.data = data.array[indexPath.row]
+        navigationController?.pushViewController(infoScreenViewController, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            data.array.remove(at: indexPath.row)
+            table.reloadData()
+        }
+    }
 }

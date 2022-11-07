@@ -10,15 +10,29 @@ import UIKit
 
 class InfoScreenViewController: UIViewController {
     
-    var data: DataUsers? {
+    var data: Model? {
         didSet {
-            
+            imagePerson.image = data?.image ?? UIImage(systemName: "folder.badge.minus")
+            namePersonLabel.text = data?.season
+            typePersonLabel.text = data?.data
         }
     }
+    
+    let rightButtonItem = UIBarButtonItem.init(
+        title: "Edit",
+        style: .done,
+        target: self,
+        action: #selector(edit))
+    
+    @objc func edit() {
         
+    }
+    
     private let imagePerson: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
+        image.clipsToBounds = true
+        image.layer.cornerRadius = 20
         return image
     }()
     
@@ -41,6 +55,7 @@ class InfoScreenViewController: UIViewController {
         setupLayout()
         setupView()
         view.backgroundColor = .white
+        navigationItem.rightBarButtonItem = rightButtonItem
     }
     
     private func setupLayout() {
