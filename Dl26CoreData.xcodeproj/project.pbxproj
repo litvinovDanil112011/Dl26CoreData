@@ -19,6 +19,7 @@
 		FA4105712917BE7C006F7941 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4105702917BE7C006F7941 /* TableCell.swift */; };
 		FA4105742917BEB5006F7941 /* DataUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4105732917BEB5006F7941 /* DataUsers.swift */; };
 		FA41057A2917BF5A006F7941 /* InfoScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4105792917BF5A006F7941 /* InfoScreenViewController.swift */; };
+		FA41057C29197AC3006F7941 /* AddArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41057B29197AC3006F7941 /* AddArray.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		FA4105702917BE7C006F7941 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		FA4105732917BEB5006F7941 /* DataUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUsers.swift; sourceTree = "<group>"; };
 		FA4105792917BF5A006F7941 /* InfoScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScreenViewController.swift; sourceTree = "<group>"; };
+		FA41057B29197AC3006F7941 /* AddArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArray.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				FA41054A2917BAE8006F7941 /* Dl26CoreData */,
+				FA4105722917BEA7006F7941 /* Data */,
+				FA41056D2917BE24006F7941 /* Extensions */,
 				FA4105492917BAE8006F7941 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,8 +72,6 @@
 		FA41054A2917BAE8006F7941 /* Dl26CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				FA4105722917BEA7006F7941 /* Data */,
-				FA41056D2917BE24006F7941 /* Extensions */,
 				FA4105642917BC28006F7941 /* Moduls */,
 				FA4105632917BBE5006F7941 /* Resourse */,
 				FA4105622917BBD4006F7941 /* App */,
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				FA41056E2917BE41006F7941 /* Metric.swift */,
+				FA41057B29197AC3006F7941 /* AddArray.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				FA41054E2917BAE8006F7941 /* SceneDelegate.swift in Sources */,
 				FA41057A2917BF5A006F7941 /* InfoScreenViewController.swift in Sources */,
 				FA41056F2917BE41006F7941 /* Metric.swift in Sources */,
+				FA41057C29197AC3006F7941 /* AddArray.swift in Sources */,
 				FA4105742917BEB5006F7941 /* DataUsers.swift in Sources */,
 				FA41056A2917BD73006F7941 /* MainViewController.swift in Sources */,
 			);
